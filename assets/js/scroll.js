@@ -156,7 +156,7 @@ updatePageUrl = () => {
 
     // else, use the id of the element
     } else {
-        let path = pageWrapper.children[currentSlide].id;
+        let path = '/' + pageWrapper.children[currentSlide].id;
         window.history.pushState(null, path, path);
     }
 }
