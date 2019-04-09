@@ -1,7 +1,7 @@
 <div class="fixed-wrapper">
     <div class="quote">
-        <h1>"This is a quote a really really long quote it isnt going to end for a while, its never going to end, actually its ending now."</h1>
-        <h2>-Some Guy</h2>
+        <h1>{{ site.data.home.quote.text | prepend: '"' | append: '"' }}</h1>
+        <h2>{{ site.data.home.quote.author | prepend: '-' }}</h2>
     </div>
 
     <div class="scroll-text">

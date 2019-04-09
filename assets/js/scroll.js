@@ -1,5 +1,3 @@
-// TODO: Impliment touchscreen scrolling
-
 let pageWrapper = document.getElementById('page-wrapper'); // Contains all fullscreen pages
 let navBar = document.getElementsByTagName('nav')[0];
 let navBtns = document.getElementsByClassName('nav-controls')[0];
