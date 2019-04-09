@@ -1,0 +1,22 @@
+$poloroid-size: 100
+
+.poloroid
+    display: inline-block
+    padding: calc(#{$poloroid-size}px * .15)
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .1)
+    background-color: white
+
+    .image
+        width: calc(#{$poloroid-size}px * 3.2)
+        height: calc(#{$poloroid-size}px * 3.2)
+        background-color: rgba(0, 0, 0, .1)
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: cover
+
+    .text
+        margin-top: calc(#{$poloroid-size}px * .15)
+        height: calc(#{$poloroid-size}px * .7)
+        font-family: 'Rockness'
+        font-size: calc(#{$poloroid-size}px * .55)
+        text-align: center

@@ -6,6 +6,11 @@ sass:
 $page-transition-speed: 500ms
 $nav-bar-height: 70px
 
+@font-face
+    font-family: 'Rockness'
+    src: url('/assets/fonts/rockness/Rockness.otf')
+    src: url('/assets/fonts/rockness/Rockness.ttf')
+
 @import 'nav.sass'
 @import 'footer.sass'
 
@@ -13,6 +18,8 @@ $nav-bar-height: 70px
 @import 'about.sass'
 @import 'projects.sass'
 @import 'contact.sass'
+
+@import 'components/poloroid'
 
 body
     margin: 0
@@ -36,6 +43,7 @@ body
     top: 0
     left: 0
     transition: top $page-transition-speed ease
+    background-color: rgb(245, 245, 245)
 
     &.moveUp
         top: -100vh
