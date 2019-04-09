@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/assets/css/master.css">
     </head>
     <body>
-        {% include nav.html %}
+        {% include components/nav.html %}
         <div id="page-wrapper">
             {% for section in site.sections  %}
                 {% assign firstSection = site.sections | first %}
@@ -23,7 +23,7 @@
                 {% endif %}
             {% endfor %}
         </div>
-        <!-- {% include footer.html %} -->
+        <!-- {% include components/footer.html %} -->
 
         <!-- Lodash throttle -->
         <script src="/assets/lib/lodash/lodash.js" charset="utf-8"></script>
