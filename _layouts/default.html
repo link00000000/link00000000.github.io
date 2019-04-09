@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ site.title }}</title>
+
+        <link rel="stylesheet" href="/assets/css/master.css">
+    </head>
+    <body>
+        {% include nav.html %}
+        <div id="page-wrapper">
+            {% for section in site.sections  %}
+                {% assign firstSection = site.sections | first %}
+                {% if section.anchor == firstSection.anchor %}
+                    <!-- Dont assign .moveDown class to first element -->
+                    <section id="{{ section.anchor }}" class="page">
+                        {% include {{ section.anchor | append: ".html" }} %}
+                    </section>
+                {% else %}
+                <section id="{{ section.anchor }}" class="page moveDown">
+                    {% include {{ section.anchor | append: ".html" }} %}
+                </section>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!-- {% include footer.html %} -->
+
+        <!-- Lodash throttle -->
+        <script src="/assets/lib/lodash/lodash.js" charset="utf-8"></script>
+        <script src="/assets/js/utils.js" charset="utf-8"></script>
+        <script src="/assets/js/scroll.js" charset="utf-8"></script>
+    </body>
+</html>

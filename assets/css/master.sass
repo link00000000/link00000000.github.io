@@ -1,0 +1,48 @@
+---
+sass:
+    sass_dir: _sass
+---
+
+$page-transition-speed: 500ms
+$nav-bar-height: 70px
+
+@import 'nav.sass'
+@import 'footer.sass'
+
+@import 'home.sass'
+@import 'about.sass'
+@import 'projects.sass'
+@import 'contact.sass'
+
+body
+    margin: 0
+    padding: 0
+    border: none
+    background: url('/assets/images/silver_laptop.webp')
+    background-size: cover
+    background-attachment: fixed
+
+#page-wrapper
+    height: 100vh
+    width: 100%
+    position: relative
+    overflow: hidden
+
+.page
+    height: 100vh
+    width: 100%
+    padding: calc(#{$nav-bar-height} + 40px) 40px 40px 40px
+    position: absolute
+    top: 0
+    left: 0
+    transition: top $page-transition-speed ease
+
+    &.moveUp
+        top: -100vh
+
+    &.moveDown
+        top: 100vh
+
+@for $i from 1 through {{ site.sections.size }}
+    .page:nth-child(#{$i})
+        z-index: $i
