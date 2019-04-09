@@ -8,12 +8,18 @@ let sensitivity = 30; // Amount to scroll before playing animation
 let slideTimeout = 600; // How long to lock slide before another slide can occur
 let currentSlide = 0; // Current page displayed
 let totalSlide = pageWrapper.children.length; // Total number of fullscreen pages
+let windowLocation = window.location.pathname.replace(/\//g, ''); // The path of the browser after the / in the url
 
 // Attach 'wheel' event listener on page load, 'DOMMouseScroll' if Firefox
 window.onload = () => {
     var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
     window.addEventListener(mousewheelEvent, _.throttle(scrollHandler, slideTimeout), false);
     window.addEventListener('keydown', _.throttle(keydownHandler, slideTimeout), false);
+
+    // If browser path is not home, then move to path
+    if(windowLocation) {
+        changeSlide(windowLocation);
+    }
 }
 
 // Takes the event triggered and begins page transition
@@ -52,6 +58,7 @@ scrollHandler = e => {
     }
 }
 
+// Handles keypresses from the keyboard to transition pages
 keydownHandler = e => {
     if (!ticking) {
         if (e.keyCode == 40) {
@@ -76,6 +83,7 @@ keydownHandler = e => {
     }
 }
 
+// Handles the clicks of the onscreen navigation buttons to transition pages
 navBtnHandler = isDown => {
     if(!ticking) {
         ticking = true;
@@ -115,6 +123,9 @@ transitionPage = (isDown) => {
 
     // Update nav
     updateNav();
+
+    // Update url
+    updatePageUrl();
 }
 
 // Updates the nav color and current selection
@@ -136,28 +147,51 @@ updateNav = () => {
     addClass(document.querySelectorAll('nav div a')[currentSlide], 'current');
 }
 
+// Update location in the url
+updatePageUrl = () => {
+
+    // if the first page, remove path and result to root
+    if(currentSlide == 0) {
+        window.history.pushState(null, '/', '/');
+
+    // else, use the id of the element
+    } else {
+        let path = pageWrapper.children[currentSlide].id;
+        window.history.pushState(null, path, path);
+    }
+}
+
+// Provided an id anchor omitting the #, the page with that id is brought to
+// the foreground
 changeSlide = (anchor) => {
     ticking = true;
     let i = 0;
     let indexOfAnchor;
-    while (indexOfAnchor === undefined) {
+
+    // Returns the index of the anchor tag element, returns value of totalSlide
+    // if element is not found
+    while (indexOfAnchor === undefined && i != totalSlide) {
         if (pageWrapper.children[i].id == anchor) {
             indexOfAnchor = i;
         } else {
             i++;
         }
     }
-    for (i = 0; i < indexOfAnchor; i++) {
+
+    // If pages is found
+    if(i != totalSlide) {
+        for (i = 0; i < indexOfAnchor; i++) {
+            removeClass(pageWrapper.children[i], 'moveDown');
+            addClass(pageWrapper.children[i], 'moveUp');
+        }
         removeClass(pageWrapper.children[i], 'moveDown');
-        addClass(pageWrapper.children[i], 'moveUp');
-    }
-    removeClass(pageWrapper.children[i], 'moveDown');
-    removeClass(pageWrapper.children[i], 'moveUp');
-    for (i = indexOfAnchor + 1; i < totalSlide; i++) {
         removeClass(pageWrapper.children[i], 'moveUp');
-        addClass(pageWrapper.children[i], 'moveDown');
+        for (i = indexOfAnchor + 1; i < totalSlide; i++) {
+            removeClass(pageWrapper.children[i], 'moveUp');
+            addClass(pageWrapper.children[i], 'moveDown');
+        }
+        currentSlide = indexOfAnchor;
+        updateNav();
+        lockSlideTransition();
     }
-    currentSlide = indexOfAnchor;
-    updateNav();
-    lockSlideTransition();
 }
