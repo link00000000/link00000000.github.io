@@ -3,6 +3,7 @@ sass:
     sass_dir: _sass
 ---
 
+$page-padding: 100px
 $page-transition-speed: 500ms
 $nav-bar-height: 70px
 
@@ -37,7 +38,7 @@ body
 .page
     height: 100vh
     width: 100%
-    padding: calc(#{$nav-bar-height} + 40px) 40px 40px 40px
+    padding: #{$nav-bar-height + $page-padding} $page-padding $page-padding $page-padding
     position: absolute
     top: 0
     left: 0
