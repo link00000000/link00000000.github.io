@@ -1,6 +1,10 @@
 #about
     box-sizing: border-box
 
+        position: absolute
+        @for $i from 1 through 3
+            &:nth-child(#{$i})
+                transform: rotate(#{-45 * ((3 - $i) / 3)}deg)
     .grid-wrapper
         width: 100%
         height: 100%
