@@ -1,8 +1,11 @@
 <div class="grid-wrapper">
     <div class="col-left">
-        {% include components/poloroid.html image="/assets/images/silver_laptop.webp" text="Hello World"%}
+        {% for poloroid in site.data.about.poloroid %}
+            {% include components/poloroid.html image=poloroid.image text=poloroid.text %}
+        {% endfor %}
     </div>
     <div class="col-right">
-
+        <h1 class="title">{{ site.data.about.title }}</h1>
+        <h2 class="text">{{ site.data.about.text }}</h2>
     </div>
 </div>

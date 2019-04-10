@@ -2,9 +2,14 @@ $poloroid-size: 100
 
 .poloroid
     display: inline-block
+    position: absolute
     padding: calc(#{$poloroid-size}px * .15)
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .1)
     background-color: white
+
+    @for $i from 1 through 3
+        &:nth-child(#{$i})
+            transform: rotate(#{-45 * ((3 - $i) / 3)}deg)
 
     .image
         width: calc(#{$poloroid-size}px * 3.2)

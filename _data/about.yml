@@ -1,0 +1,9 @@
+title: hi.
+text: I'm Logan. I'm a computer science student at the University of Akron graudating in 2022.
+poloroid:
+    - image: '/assets/images/fern.jpg'
+      text: ''
+    - image: '/assets/images/path.jpg'
+      text: ''
+    - image: ''
+      text: 'Hello World'
