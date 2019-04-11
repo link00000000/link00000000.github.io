@@ -19,8 +19,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   A portfolio
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: crandall_logan
-github_username:  link00000000
 sections:
     - name: Home
       anchor: home
@@ -39,6 +37,11 @@ plugins:
 sass:
   style: compressed
 exclude: []
+
+resumelink: ""
+githublink: ""
+handshakelink: ""
+twitterlink: ""
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
