@@ -43,23 +43,26 @@ scrollHandler = e => {
 
     // If no transition is currently happening
     if (!ticking) {
-
-        // Scroll Down
-        if (delta <= -sensitivity) {
-            ticking = true;
-            if (currentSlide !== totalSlide - 1) {
-                transitionPage(true);
+        let allHoveredElements = document.querySelectorAll(':hover');
+        let currentHoverElement = allHoveredElements[allHoveredElements.length - 1].tagName;
+        if(currentHoverElement != 'TEXTAREA') {
+            // Scroll Down
+            if (delta <= -sensitivity) {
+                ticking = true;
+                if (currentSlide !== totalSlide - 1) {
+                    transitionPage(true);
+                }
+                lockSlideTransition();
             }
-            lockSlideTransition();
-        }
 
-        // Scroll Up
-        if (delta >= sensitivity) {
-            ticking = true;
-            if (currentSlide != 0) {
-                transitionPage(false);
+            // Scroll Up
+            if (delta >= sensitivity) {
+                ticking = true;
+                if (currentSlide != 0) {
+                    transitionPage(false);
+                }
+                lockSlideTransition();
             }
-            lockSlideTransition();
         }
     }
 }
