@@ -38,10 +38,10 @@ sass:
   style: compressed
 exclude: []
 
-resumelink: ""
-githublink: ""
-handshakelink: ""
-twitterlink: ""
+resumelink: "https://docs.google.com/document/d/1fv0njCmxElh1bGPsvHUYBdjvt4Bi_YC9irQrNKXANaU/edit?usp=sharing"
+githublink: "https://github.com/link00000000/"
+handshakelink: "https://uakron.joinhandshake.com/users/8438281"
+twitterlink: "https://twitter.com/@crandall_logan"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
