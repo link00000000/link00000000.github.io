@@ -29,7 +29,7 @@ scrollHandler = e => {
     let delta = 0;
     if (isFirefox) {
         delta = e.detail * (-120);
-    } else if (ifIe) {
+    } else if (isIe) {
         delta = -e.deltaY;
     } else {
         delta = e.wheelDelta;
