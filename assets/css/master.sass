@@ -7,10 +7,50 @@ $page-padding: 100px
 $page-transition-speed: 500ms
 $nav-bar-height: 70px
 
+/*
+ * Rockness Font Face
+ */
 @font-face
     font-family: 'Rockness'
     src: url('/assets/fonts/rockness/Rockness.otf')
     src: url('/assets/fonts/rockness/Rockness.ttf')
+
+/*
+ * Noto Sans Font Face
+ */
+// Weight 700
+@font-face
+    font-family: 'Noto Sans'
+    src: url('/assets/fonts/noto_sans/NotoSans-Bold.ttf')
+    font-weight: bold
+
+@font-face
+    font-family: 'Noto Sans'
+    src: url('/assets/fonts/noto_sans/NotoSans-BoldItalic.ttf')
+    font-weight: bold
+    font-style: italic
+
+// Weight 400
+@font-face
+    font-family: 'Noto Sans'
+    src: url('/assets/fonts/noto_sans/NotoSans-Italic.ttf')
+    font-style: italic
+
+@font-face
+    font-family: 'Noto Sans'
+    src: url('/assets/fonts/noto_sans/NotoSans-Regular.ttf')
+
+// Weight 100
+@font-face
+    font-family: 'Noto Sans'
+    src: url('/assets/fonts/noto_sans/NotoSans-Light.ttf')
+    font-weight: lighter
+
+@font-face
+    font-family: 'Noto Sans'
+    src: url('/assets/fonts/noto_sans/NotoSans-LightItalic.ttf')
+    font-weight: lighter
+    font-style: italic
 
 @import 'components/nav.sass'
 @import 'components/footer.sass'
@@ -28,6 +68,7 @@ body
     background: url('/assets/images/silver_laptop.webp')
     background-size: cover
     background-attachment: fixed
+    font-family: 'Noto Sans', 'sans', 'Helvetica'
 
 #page-wrapper
     height: 100vh
