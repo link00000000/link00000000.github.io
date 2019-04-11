@@ -1,8 +1,9 @@
+{% assign firstSection = site.sections | first %}
+
 <nav>
-    <a href=""><img src="/assets/images/logo_symbol.svg" alt=""></a>
+    <a href="javascript:;" onclick="changeSlide('{{ firstSection.anchor }}')"><img src="/assets/images/logo_symbol.svg" alt=""></a>
     <div>
         {% for section in site.sections %}
-            {% assign firstSection = site.sections | first %}
             {% if section.anchor == firstSection.anchor %}
                 <a href="javascript:;" onclick="changeSlide('{{ section.anchor }}')" class="current"> {{ section.name }}</a>
             {% else %}
