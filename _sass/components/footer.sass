@@ -4,60 +4,73 @@ footer
     width: 100%
     left: 0
     bottom: 0
-    display: flex
-    justify-content: space-around
-    padding: 40px
     font-size: 1.2em
+    display: flex
+    justify-content: center
 
-    .item
-        color: white
-        display: flex
+    .grid-wrapper
+        display: grid
+        grid-template-columns: 1fr 1fr
         align-items: center
+        width: 50%
 
-        .icon
-            background-color: rgb(37, 37, 37)
-            width: 64px
-            height: 64px
-            margin: 16px
-            border-radius: 50%
-            background-repeat: no-repeat
-            background-position: center
-            background-size: 65%
-
-            &.icon-email
-                background-image: url('/assets/images/email.svg')
-
-            &.icon-resume
-                background-image: url('/assets/images/document.svg')
-
-
-        a
-            text-decoration: none
-            font-weight: bold
+        .item
             color: white
+            display: flex
+            align-items: center
 
-            &:hover
-                text-decoration: underline
+            .icon
+                background-color: rgb(37, 37, 37)
+                width: 64px
+                height: 64px
+                margin: 16px
+                border-radius: 50%
+                background-repeat: no-repeat
+                background-position: center
+                background-size: 65%
+                display: inline-block
 
-    .social-wrapper
+                &.icon-email
+                    background-image: url('/assets/images/email.svg')
 
-        .social
-            display: inline-block
-            margin: 4px
-            width: 64px
-            height: 64px
-            background-color: rgb(37, 37, 37)
-            transition: background-color 200ms ease
-            cursor: pointer
+                &.icon-resume
+                    background-image: url('/assets/images/document.svg')
 
-            &:hover
-                background-color: rgb(30, 30, 30)
 
-            &.github
-                background-image: url('/assets/images/github.png')
+            a
+                text-decoration: none
+                font-weight: bold
+                color: white
 
-            &.handshake
-                background-image: url('/assets/images/handshake.png')
+                &:hover
+                    text-decoration: underline
 
-            &.twitter
-                background-image: url('/assets/images/twitter.png')
+        .social-wrapper
+            margin-left: 10%
+
+            .social
+                display: inline-block
+                margin: 4px
+                width: 64px
+                height: 64px
+                background-color: rgb(37, 37, 37)
+                transition: background-color 200ms ease
+                cursor: pointer
+
+                &:hover
+                    background-color: rgb(30, 30, 30)
+
+                &.github
+                    background-image: url('/assets/images/github.png')
+
+                &.handshake
+                    background-image: url('/assets/images/handshake.png')
+
+                &.twitter
+                    background-image: url('/assets/images/twitter.png')
+
+        .hosted-on
+            color: white
+            display: flex
+            align-items: center
+            margin-left: 10%
