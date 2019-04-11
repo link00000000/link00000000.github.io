@@ -9,12 +9,18 @@ let slideTimeout = 600; // How long to lock slide before another slide can occur
 let currentSlide = 0; // Current page displayed
 let totalSlide = pageWrapper.children.length; // Total number of fullscreen pages
 let windowLocation = window.location.pathname.replace(/\//g, ''); // The path of the browser after the / in the url
+let startDrag = null; // Used to handle touchscreen scrolling
+let touchScreenSensitivity = 100;
 
 // Attach 'wheel' event listener on page load, 'DOMMouseScroll' if Firefox
 window.onload = () => {
     var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
     window.addEventListener(mousewheelEvent, _.throttle(scrollHandler, slideTimeout), false);
     window.addEventListener('keydown', _.throttle(keydownHandler, slideTimeout), false);
+    window.addEventListener('touchstart', touchHandler, false);
+    window.addEventListener('touchmove', touchHandler, false);
+    window.addEventListener('touchend', touchHandler, false);
+    window.addEventListener('touchcancel', touchHandler, false);
 
     // If browser path is not home, then move to path
     if(windowLocation) {
@@ -97,6 +103,34 @@ navBtnHandler = isDown => {
             }
         }
         lockSlideTransition();
+    }
+}
+
+touchHandler = e => {
+    switch(e.type) {
+        case 'touchstart': {
+            startDrag = e.changedTouches[0].clientY;
+            break;
+        }
+        case 'touchmove': {
+            if(startDrag && Math.abs(startDrag - e.changedTouches[0].clientY) > touchScreenSensitivity) {
+                if(startDrag - e.changedTouches[0].clientY > 0) {
+                    transitionPage(true);
+                    startDrag = null;
+                } else {
+                    transitionPage(false);
+                    startDrag = null;
+                }
+            }
+            break;
+        }
+        case 'touchend': {
+            startDrag = null;
+            break;
+        }
+        case 'touchcancel': {
+            startDrag = null;
+        }
     }
 }
 
