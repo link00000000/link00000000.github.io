@@ -130,6 +130,7 @@ touchHandler = e => {
         }
         case 'touchcancel': {
             startDrag = null;
+            break
         }
     }
 }
