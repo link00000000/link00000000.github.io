@@ -3,7 +3,11 @@
         <h1>check out these cool things i've made.</h1>
         <div class="menu">
             {% for project in site.data.projects.projects %}
-                <span class="item" onclick="changeCard('{{ project.image }}', '{{ project.title }}', '{{ project.desc }}', '{{ project.link }}')">{{ project.title }}</span>
+                {% if forloop.first %}
+                    <span class="item current" onclick="changeCard(this, '{{ project.image }}', '{{ project.title }}', '{{ project.desc }}', '{{ project.link }}')">{{ project.title }}</span>
+                {% else %}
+                    <span class="item" onclick="changeCard(this, '{{ project.image }}', '{{ project.title }}', '{{ project.desc }}', '{{ project.link }}')">{{ project.title }}</span>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
