@@ -3,9 +3,7 @@
         <h1>check out these cool things i've made.</h1>
         <div class="menu">
             {% for project in site.data.projects.projects %}
-                <span class="item" data-image="{{ project.image }}"
-                    data-title="{{ project.title }}"
-                    data-desc="{{ project.desc }}" data-link="{{ project.link }}">{{ project.title }}</span>
+                <span class="item" onclick="changeCard('{{ project.image }}', '{{ project.title }}', '{{ project.desc }}', '{{ project.link }}')">{{ project.title }}</span>
             {% endfor %}
         </div>
     </div>
@@ -16,7 +14,7 @@
                 <div class="title">{{ site.data.projects.projects[0].title }}</div>
                 <div class="desc">{{ site.data.projects.projects[0].desc }}</div>
             </div>
-            <a href="" class="view-on-github">View project on GitHub</a>
+            <a href="{{ site.data.projects.projects[0].link }}" class="view-on-github">View project on GitHub</a>
         </div>
     </div>
 </div>
