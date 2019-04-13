@@ -1,0 +1,7 @@
+projects:
+    - image: /assets/images/fern.jpg
+      title: AccidentallyCoded.com
+      desc: This website that you are looking at right now
+    - image: /assets/images/path.jpg
+      title: Some other project
+      desc: This is some other project. not sure what to put there since its a place holder but heres some text
