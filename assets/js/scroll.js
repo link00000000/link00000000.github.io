@@ -116,6 +116,7 @@ touchHandler = e => {
             break;
         }
         case 'touchmove': {
+            e.preventDefault();
             if(startDrag && Math.abs(startDrag - e.changedTouches[0].clientY) > touchScreenSensitivity) {
                 if(startDrag - e.changedTouches[0].clientY > 0) {
                     transitionPage(true);
