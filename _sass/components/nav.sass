@@ -1,8 +1,50 @@
+@import 'responsive/components/nav.sass'
+
 $dark-mode-transition: 600ms
+
+.hamburger-menu
+    display: none
+    position: absolute
+    z-index: 1002
+    left: 16px
+    top: 32px
+    width: 32px
+    height: 3px
+    background-color: white
+    transition: all $dark-mode-transition ease
+
+    &::before, &::after
+        content: ''
+        width: 32px
+        height: 3px
+        position: absolute
+        background-color: white
+        transform-origin: left
+        transition: all $dark-mode-transition ease
+
+    &::before
+        top: -8px
+
+    &::after
+        top: 8px
+
+    &.open
+        background-color: transparent
+
+        &::before
+            transform: rotate(45deg) translateY(-5px)
+            background-color: black
+
+        &::after
+            transform: rotate(-45deg) translateY(5px)
+            background-color: black
+
+    &.dark:not(.open), &.dark::before, &.dark::after
+        background-color: black
 
 nav
     position: fixed
-    z-index: 1000
+    z-index: 1001
     width: 100%
     left: 0
     top: 0

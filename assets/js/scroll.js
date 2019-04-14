@@ -1,6 +1,7 @@
 let pageWrapper = document.getElementById('page-wrapper'); // Contains all fullscreen pages
 let navBar = document.getElementsByTagName('nav')[0];
 let navBtns = document.getElementsByClassName('nav-controls')[0];
+let hamburger = document.getElementsByClassName('hamburger-menu')[0];
 let ticking = false; // True during animation, false otherwise
 let isFirefox = (/Firefox/i.test(navigator.userAgent)); // Evaluates to true if browser is firefox
 let isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent)); // Evaluates true if browser is IE
@@ -155,22 +156,24 @@ lockSlideTransition = () => {
 // If true is passed, transition page down
 // else if false is passed, transition page up
 transitionPage = (isDown) => {
-    if (isDown && currentSlide < totalSlide - 1) {
-        addClass(pageWrapper.children[currentSlide], 'moveUp');
-        removeClass(pageWrapper.children[currentSlide + 1], 'moveDown');
-        currentSlide++;
-    }
-    if (!isDown && currentSlide > 0) {
-        removeClass(pageWrapper.children[currentSlide - 1], 'moveUp');
-        addClass(pageWrapper.children[currentSlide], 'moveDown');
-        currentSlide--;
-    }
+    if(!hamburger.classList.contains('open')) {
+        if (isDown && currentSlide < totalSlide - 1) {
+            addClass(pageWrapper.children[currentSlide], 'moveUp');
+            removeClass(pageWrapper.children[currentSlide + 1], 'moveDown');
+            currentSlide++;
+        }
+        if (!isDown && currentSlide > 0) {
+            removeClass(pageWrapper.children[currentSlide - 1], 'moveUp');
+            addClass(pageWrapper.children[currentSlide], 'moveDown');
+            currentSlide--;
+        }
 
-    // Update nav
-    updateNav();
+        // Update nav
+        updateNav();
 
-    // Update url
-    updatePageUrl();
+        // Update url
+        updatePageUrl();
+    }
 }
 
 // Updates the nav color and current selection
@@ -180,9 +183,11 @@ updateNav = () => {
     if (currentSlide != 0) {
         addClass(navBar, 'dark');
         addClass(navBtns, 'dark');
+        addClass(hamburger, 'dark');
     } else {
         removeClass(navBar, 'dark');
         removeClass(navBtns, 'dark');
+        removeClass(hamburger, 'dark');
     }
 
     // Updates the selection of the navbar
@@ -238,5 +243,7 @@ changeSlide = (anchor) => {
         currentSlide = indexOfAnchor;
         updateNav();
         lockSlideTransition();
+        removeClass(document.getElementsByTagName('nav')[0], 'open');
+        removeClass(hamburger, 'open');
     }
 }
