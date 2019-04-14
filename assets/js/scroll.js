@@ -11,6 +11,7 @@ let totalSlide = pageWrapper.children.length; // Total number of fullscreen page
 let windowLocation = window.location.pathname.replace(/\//g, ''); // The path of the browser after the / in the url
 let startDrag = null; // Used to handle touchscreen scrolling
 let touchScreenSensitivity = 100;
+let lastTouchTime = 0;
 
 // Attach 'wheel' event listener on page load, 'DOMMouseScroll' if Firefox
 window.onload = () => {
@@ -129,6 +130,11 @@ touchHandler = e => {
             break;
         }
         case 'touchend': {
+            let now = (new Date()).getTime();
+            if(now - lastTouchTime <= 300) {
+                e.preventDefault();
+            }
+            lastTouchTime = now;
             startDrag = null;
             break;
         }
