@@ -1,12 +1,11 @@
+@import 'responsive/contact.sass'
+
 #contact
     padding-left: 0
     padding-right: 0
     padding-bottom: 0
-    display: flex
-    flex-direction: column
 
     .content
-        flex: 1 0 auto
 
         .text-wrapper
             width: 100%
@@ -36,6 +35,10 @@
                     padding: 10px
                     width: 100%
                     resize: none
+                    box-sizing: border-box
+
+                    &, &:active, &:focus, &:focus-within, &:hover, &:visited
+                        font-size: 16px !important
 
                     &:focus
                         background-color: rgb(215, 215, 215)
@@ -44,6 +47,7 @@
                     font-family: 'Noto Sans', 'sans', 'Helvetica'
 
                 input[type="button"]
+                    -webkit-appearance: none
                     width: 30%
                     cursor: pointer
                     transition: background-color 100ms ease
