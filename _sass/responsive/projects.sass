@@ -1,0 +1,47 @@
+@media only screen and (max-width: 1200px)
+    #projects .card
+        grid-template-columns: 1fr 1fr !important
+
+@media only screen and (max-width: 1000px)
+    #projects .card
+        grid-template-columns: 1fr !important
+
+        .image
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%) !important
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%) !important
+
+@media only screen and (max-width: 900px)
+    #projects .col-right
+        margin-left: 1em
+
+@media only screen and (max-width: 750px)
+    #projects
+        padding: 100px 50px 150px 50px
+
+        .grid-wrapper
+            grid-template-columns: 1fr !important
+
+            .col-left
+                font-size: 10px
+
+            .card
+                grid-template-columns: 1fr 3fr !important
+                font-size: 10px
+
+                .image
+                    -webkit-clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%) !important
+                    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%) !important
+
+                .text
+                    padding-bottom: 1em
+
+@media only screen and (max-width: 450px)
+    #projects .grid-wrapper
+        .menu
+            grid-template-columns: 100% !important
+
+        .card
+            grid-template-columns: 1fr !important
+
+            .image
+                display: none
