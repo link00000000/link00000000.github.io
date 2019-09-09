@@ -5,5 +5,5 @@ poloroid:
       text: ''
     - image: '/assets/images/path.jpg'
       text: ''
-    - image: ''
+    - image: '/assets/images/profile.jpg'
       text: 'Hello World'
