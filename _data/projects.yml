@@ -1,4 +1,12 @@
 projects:
+    - image: /assets/images/projects/strife.ai.png
+      title: Strife.AI
+      desc: The website for Strife AI LLC. This is a blog style website with a few static pages. It was made using ASP.NET and all of the content is easily managed through a admin panel using Cofoundry CMS
+      link: https://strife.ai
+    - image: /assets/images/projects/scribble.png
+      title: Scribble
+      desc: Scribble is a project created in collaboration with Patrick Howard. It is a text editor that allows you to edit your code with syntax highlighting, and compile and run code, all in the browser. Scribble was built using a client-server approach where the client and server are completely decoupled and communicate over a REST API. The server was created with Django and MySQL, the client was made with VueJS, and the compile server was written in NodeJS.
+      link: https://github.com/Scribble-Editor
     - image: /assets/images/projects/accidentallycoded.png
       title: AccidentallyCoded.com
       desc: This website that you are looking at right now. All of the code is available on GitHub.
