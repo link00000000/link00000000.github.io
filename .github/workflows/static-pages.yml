@@ -1,0 +1,31 @@
+name: Generate Static Pages
+
+on:
+    push:
+        - master
+        - v2
+
+jobs:
+    generate:
+        name: Generate Static Pages
+        container: klakegg/hugo
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Build
+              run: |
+                  hugo
+
+            - name: Upload build artifacts
+              uses: actions/upload-artifact@v2
+                name: site
+                path: ./public
+
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  public_dir: ./public
+              if: startsWith(github.ref, 'refs/tags/')
