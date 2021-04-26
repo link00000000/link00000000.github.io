@@ -1,0 +1,4 @@
+baseURL = "https://accidentallycoded.com/"
+languageCode = "en-us"
+title = "accidentallycoded.com"
+theme = "ananke"
