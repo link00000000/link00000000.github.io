@@ -9,6 +9,7 @@ on:
 jobs:
     generate:
         name: Generate Static Pages
+        runs-on: ubuntu-latest
         container: klakegg/hugo
 
         steps:
