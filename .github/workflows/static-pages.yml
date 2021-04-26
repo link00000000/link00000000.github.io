@@ -10,15 +10,18 @@ jobs:
     generate:
         name: Generate Static Pages
         runs-on: ubuntu-latest
-        container: klakegg/hugo
 
         steps:
             - name: Checkout
               uses: actions/checkout@v2
 
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v2
+              with:
+                  hugo-version: '0.81.0'
+
             - name: Build
-              run: |
-                  hugo
+              run: hugo --minify
 
             - name: Upload build artifacts
               uses: actions/upload-artifact@v2
