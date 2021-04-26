@@ -2,8 +2,9 @@ name: Generate Static Pages
 
 on:
     push:
-        - master
-        - v2
+        branches:
+            - master
+            - v2
 
 jobs:
     generate:
