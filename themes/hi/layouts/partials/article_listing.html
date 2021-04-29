@@ -1,0 +1,13 @@
+<article>
+    <a href="{{- .RelPermalink -}}">
+        <h2>{{- .Title -}}</h2>
+    </a>
+    <p>{{- .Summary -}}</p>
+    <a href="{{- .RelPermalink -}}">
+        {{ with .Resources.GetMatch .Params.header_image }}
+            <img src="{{- .RelPermalink -}}">
+        {{ else }}
+            <img src="{{- (resources.GetMatch "images/placeholder.png").RelPermalink -}}">
+        {{ end }}
+    </a>
+</article>

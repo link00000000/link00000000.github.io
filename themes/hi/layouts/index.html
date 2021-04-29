@@ -1,1 +1,35 @@
-{{ define "main" }}{{ end }}
+{{ define "main" }}
+
+<section>
+    <img src="{{- (resources.GetMatch "images/hi.svg").RelPermalink -}}">
+
+    {{- .Content -}}
+
+    {{ with resources.GetMatch .Params.photo }}
+        <img src="{{- .RelPermalink -}}">
+    {{ else }}
+        <img src="{{- (resources.GetMatch "images/placeholder.png").RelPermalink -}}">
+    {{ end }}
+</section>
+
+<section>
+    <ul>
+        {{ range .Params.links }}
+            <li>
+                {{ partial "external_link.html" . }}
+            </li>
+        {{ end }}
+    </ul>
+</section>
+
+<section>
+    <ul>
+        {{ range (sort (where .Site.RegularPages "Section" "projects") ".Date" "desc") }}
+            <li>
+                {{ partial "article_listing.html" . }}
+            </li>
+        {{ end }}
+    </ul>
+</section>
+
+{{ partial "cta.html" "Get in touch" }} {{ end }}
