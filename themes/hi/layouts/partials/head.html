@@ -4,23 +4,23 @@
     
     <title>{{ .Title }} – {{ .Site.Title }}</title>
 
-    {{- if .Description }}
+    {{ if .Description }}
         <meta name="description" content="{{ .Description }}" />
-    {{ end -}}
+    {{ end }}
 
-    {{- if .Keywords }}
+    {{ if .Keywords }}
         <meta name="keywords" content="{{ delimit .Keywords "," }}" />
-    {{ end -}}
+    {{ end }}
 
-    {{- if .Params.Author }}
+    {{ if .Params.Author }}
         <meta name="author" content="{{ .Params.Author}}" />
-    {{ end -}}
+    {{ end }}
 
-    {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
-    {{- if .Site.IsServer }}
+    {{ $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+    {{ if .Site.IsServer }}
         <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
     {{ else }}
-        {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
+        {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
         <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-    {{ end -}}
+    {{ end }}
 </head>
