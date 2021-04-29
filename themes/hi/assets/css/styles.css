@@ -1,6 +1,21 @@
 /* Tailwind base - put variables under: tailwind.config.js */
-@import "node_modules/tailwindcss/base";
+@import 'node_modules/tailwindcss/base';
 /* Tailwind component classes registered by plugins*/
-@import "node_modules/tailwindcss/components";
+@import 'node_modules/tailwindcss/components';
+
 /* Tailwind's utility classes - generated based on config file */
-@import "node_modules/tailwindcss/utilities";
+@import 'node_modules/tailwindcss/utilities';
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url('/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), url('/fonts/Open_Sans/OpenSans-Regular.ttf');
+}
+
+html {
+    font-size: 18px !important;
+}
