@@ -1,8 +1,9 @@
 {{ define "main" }}
 
-<section class="flex flex-col-reverse place-content-center mx-auto relative p-12 bg-no-repeat bg-contain bg-bottom"
-    style="background-image: url('{{- (resources.GetMatch "images/hi.svg").RelPermalink -}}'); background-size: 80%;">
-    <div class="z-10 my-6">{{- .Content -}}</div>
+<section class="flex flex-col md:flex-row place-items-center mx-auto relative mb-6 md:justify-between">
+    <div class="flex place-items-center z-10 mb-12 md:mb-0 md:pr-6 bg-no-repeat bg-contain bg-center md:bg-left-bottom h-96" style="background-image: url('{{- (resources.GetMatch "images/hi.svg").RelPermalink -}}');">
+        <div>{{- .Content -}}</div>
+    </div>
 
     {{ $profile_image := "" }}
     {{ with resources.GetMatch .Params.photo }}
@@ -10,7 +11,7 @@
     {{ else }}
         {{ $profile_image = (resources.GetMatch "images/placeholder.png").RelPermalink }}
     {{ end }}
-    <img src="{{- $profile_image -}}" class="rounded-md shadow-lg z-10">
+    <img src="{{- $profile_image -}}" class="rounded shadow-md z-10 w-full max-w-xs">
 </section>
 
 <section>
