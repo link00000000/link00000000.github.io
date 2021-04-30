@@ -1,4 +1,10 @@
 <a href="{{- .url -}}">
+    {{ with resources.GetMatch .icon }}
+        <img src="{{- .RelPermalink -}}">
+    {{ else }}
+        <img src="{{- (resources.GetMatch "images/icons/placeholder.svg").RelPermalink -}}">
+    {{ end }}
+
     {{ if .name }}
         <span>{{- .name -}}</span>
     {{ end }}
