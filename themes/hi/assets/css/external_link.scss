@@ -8,6 +8,9 @@
 
 .hi__external-link .hi__external-link_icon path {
     // class="transition"
+    transition-property: theme('transitionProperty.DEFAULT');
+
+    // class="transition"
     transition-timing-function: theme('transitionTimingFunction.DEFAULT');
 
     // class="transition"
