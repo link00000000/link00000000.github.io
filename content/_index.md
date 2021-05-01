@@ -1,6 +1,6 @@
 ---
 title: "Hi"
-photo: images/profile.jpg
+photo: images/profile.png
 links:
     - name: GitHub
       username: '@link00000000'
