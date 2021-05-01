@@ -13,11 +13,14 @@ links:
     - name: Email
       username: logan@accidentallycoded.com
       icon: images/icons/email.svg
-      url: 'mailto: logan@accidentallycoded.com'
+      url: 'mailto:logan@accidentallycoded.com'
     - name: Resume
       username: null
       url: https://docs.google.com/document/d/1fv0njCmxElh1bGPsvHUYBdjvt4Bi_YC9irQrNKXANaU
       icon: images/icons/resume.svg
+cta:
+    text: Lets get in touch
+    url: 'mailto:logan@accidentallycoded.com'
 ---
 
 I'm Logan. I'm a computer science student at the University of Akron, and I will

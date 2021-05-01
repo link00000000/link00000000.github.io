@@ -34,6 +34,8 @@
     </ul>
 </section>
 
-{{ partial "cta.html" "Get in touch" }}
+<section class="flex place-content-center">
+    {{ partial "cta.html" .Params.cta }}
+</section>
 
 {{ end }}
