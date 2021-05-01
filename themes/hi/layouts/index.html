@@ -15,7 +15,7 @@
 </section>
 
 <section>
-    <ul>
+    <ul class="grid sm:grid-cols-2 md:grid-cols-none md:grid-flow-col gap-8">
         {{ range .Params.links }}
             <li>
                 {{ partial "external_link.html" . }}

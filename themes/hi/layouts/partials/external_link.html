@@ -1,15 +1,21 @@
-<a href="{{- .url -}}">
-    {{ with resources.GetMatch .icon }}
-        <img src="{{- .RelPermalink -}}">
-    {{ else }}
-        <img src="{{- (resources.GetMatch "images/icons/placeholder.svg").RelPermalink -}}">
-    {{ end }}
+<!-- @NOTE More styles in external_link.scss -->
 
+<a href="{{- .url -}}" class="flex flex-col place-items-center hover:text-primary-blue transition hi__external-link">
+
+    {{ $icon := ""}}
+    {{ with resources.GetMatch .icon }}
+        {{ $icon = . }}
+    {{ else }}
+        {{ $icon = (resources.GetMatch "images/icons/placeholder.svg") }}
+    {{ end }}
+    <div class="w-16 h-16 hi__external-link_icon">{{ partial "inline_resource" $icon }}</div>
+    
     {{ if .name }}
-        <span>{{- .name -}}</span>
+        <span class="text-xs mt-2">{{- .name -}}</span>
     {{ end }}
     
     {{ if .username }}
         <span>{{- .username -}}</span>
     {{ end }}
+
 </a>

@@ -1,0 +1,13 @@
+<!--
+    Render resource inline
+    Args:
+        - Hugo resource
+    
+    Example:
+    with resources.GetMatch "some.svg"
+        partial "inline_resource" .
+    end
+-->
+
+{{ $minified_resource := . | resources.Minify }}
+{{ $minified_resource.Content | safeHTML }}

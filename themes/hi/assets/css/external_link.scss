@@ -1,0 +1,24 @@
+/**
+ * Styles for external_link.html icons.
+ *
+ * These styles need to be declared outside of tailwind classes because icons
+ * are external SVG files, so tailwind classes cannot be used in the template
+ * file.
+ */
+
+.hi__external-link .hi__external-link_icon path {
+    // class="transition"
+    transition-timing-function: theme('transitionTimingFunction.DEFAULT');
+
+    // class="transition"
+    transition-duration: theme('transitionDuration.DEFAULT');
+}
+
+.hi__external-link:hover .hi__external-link_icon path {
+    fill: theme('colors.primary-blue') #{!important};
+}
+
+.hi__external-link .hi__external-link_icon > svg {
+    width: 100%;
+    height: 100%;
+}
