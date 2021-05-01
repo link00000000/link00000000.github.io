@@ -1,13 +1,20 @@
 <article>
+
     <a href="{{- .RelPermalink -}}">
-        <h2>{{- .Title -}}</h2>
-    </a>
-    <p>{{- .Summary -}}</p>
-    <a href="{{- .RelPermalink -}}">
+        {{ $image_url := "" }}
         {{ with .Resources.GetMatch .Params.header_image }}
-            <img src="{{- .RelPermalink -}}">
+            {{ $image_url = .RelPermalink }}
         {{ else }}
-            <img src="{{- (resources.GetMatch "images/placeholder.png").RelPermalink -}}">
+            {{ $image_url = (resources.GetMatch "images/placeholder.png").RelPermalink }}
         {{ end }}
+        <img src="{{- $image_url -}}" class="w-full h-96 object-cover object-center rounded shadow-md hover:opacity-75 transition">
     </a>
+    <a href="{{- .RelPermalink -}}">
+        <h2 class="font-heading text-2xl text-primary-blue mt-6 hover:opacity-75 transition">{{- .Title -}}</h2>
+    </a>
+    <p>
+        {{- .Summary -}}
+        <a href="{{- .RelPermalink -}}" class="underline hover:text-primary-blue hover:opacity-75 transition">Read more...</a>
+    </p>
+
 </article>

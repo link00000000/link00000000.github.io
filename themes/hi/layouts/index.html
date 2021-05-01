@@ -25,7 +25,7 @@
 </section>
 
 <section>
-    <ul>
+    <ul class="space-y-24">
         {{ range (sort (where .Site.RegularPages "Section" "projects") ".Date" "desc") }}
             <li>
                 {{ partial "article_listing.html" . }}
