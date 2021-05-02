@@ -1,9 +1,9 @@
 ---
 title: "I find your lack of faith disturbing."
 date: 2021-05-02T12:12:16-04:00
-draft: false
-categories: [Project]
-tags: []
+draft: true
+categories: ['Star Wars', 'Movies']
+tags: ['demo', 'test', 'messingaround']
 project_url: "https://github.com/link00000000/starwars"
 header_image: images/header.jpg
 ---

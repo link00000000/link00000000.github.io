@@ -1,0 +1,24 @@
+<!--
+    Fixed banner at top of screen
+    Args:
+        - text
+        - type (nil=normal, warning)
+    
+    Example:
+        partial "banner" (dict "text" "This is the banner text")
+
+    Example:
+        partial "banner" (dict "text" "This is a warning banner" "type" "warning")
+-->
+    
+{{ $banner_color := "" }}
+
+{{ if or (eq .type nil) (eq .type "normal") }}
+    {{ $banner_color = "bg-primary-blue" }}
+{{ else if (eq .type "warning") }}
+    {{ $banner_color = "bg-yellow-600" }}
+{{ else }}
+    {{ errorf "Invalid banner type '%q'" .type }}
+{{ end}}
+
+<div class="fixed top-0 left-0 w-full py-2 text-white text-center shadow-lg z-50 {{ $banner_color }}">{{- .text -}}</div>

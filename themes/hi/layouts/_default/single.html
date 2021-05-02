@@ -1,4 +1,9 @@
 {{ define "main" }}
+
+{{ if .Page.Draft }}
+    {{ partial "banner.html" (dict "text" "This article is a draft. It must be published before it can be seen by others." "type" "warning") }}
+{{ end }}
+
 <article class="space-y-6">
     <div class="mx-auto p-8 max-w-4xl space-y-6 sm:space-y-12 md:space-y-24 my-8">
         {{ partial "heading.html" .Title }}
