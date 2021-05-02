@@ -19,6 +19,7 @@
 
 .hi__external-link:hover .hi__external-link_icon path {
     fill: theme('colors.primary-blue') #{!important};
+    opacity: 0.75;
 }
 
 .hi__external-link .hi__external-link_icon > svg {

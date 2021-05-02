@@ -1,0 +1,60 @@
+@mixin heading($color, $is_left: true, $point_length: 52px, $stroke_length: 1024px) {
+    /* Overlaps the point with the body to prevent the background from bleeding through */
+    $point_overlap: 2px;
+
+    position: relative;
+
+    &::before, &::after {
+        content: "";
+        background-color: $color;
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
+
+    @if $is_left {
+        &::before {
+            width: $stroke_length;
+            left: -$stroke_length;
+        }
+        &::after {
+            right: -$point_length;
+            width: $point_length + $point_overlap;
+            clip-path: polygon(0 0, 100% 0, $point_overlap 100%, 0 100%);
+        }
+    }
+    @else {
+        &::before {
+            left: -$point_length;
+            width: $point_length + $point_overlap;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, calc(100% - #{$point_overlap}) 100%)
+        }
+
+        &::after {
+            width: $stroke_length;
+        }
+    }
+}
+
+@mixin remove-heading {
+    position: unset;
+    &::before, &::after {
+        content: none;
+    }
+}
+
+@layer utilities {
+    @variants responsive {
+        .heading-left {
+            @include heading(theme('colors.primary-blue'), true);
+        }
+
+        .heading-right {
+            @include heading(theme('colors.primary-blue'), false);
+        }
+
+        .heading-none {
+            @include remove-heading;
+        }
+    }
+}
