@@ -3,5 +3,9 @@ languageCode = "en-us"
 title = "accidentallycoded.com"
 theme = "hi"
 
+
+pygmentsStyle = "solarized-dark256"
+pygmentsCodeFences = true
+
 [build]
 writeStats = true

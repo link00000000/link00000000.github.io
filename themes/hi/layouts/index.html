@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+<main aria-role="main" class="mx-auto p-8 max-w-4xl space-y-6 sm:space-y-12 md:space-y-24 my-8">
+
 <section class="flex flex-col md:flex-row place-items-center mx-auto relative py-12 md:py-0 md:justify-between bg-no-repeat bg-contain bg-center md:bg-left-bottom" style="background-image: url('{{- (resources.GetMatch "images/hi.svg").RelPermalink -}}');">
     <div class="flex place-items-center z-10 mb-12 md:mb-0 md:pr-6 max-w-lg">
         <div>{{- .Content -}}</div>
@@ -41,5 +43,7 @@
 <section class="flex place-content-center">
     {{ partial "cta.html" .Params.cta }}
 </section>
+
+</main>
 
 {{ end }}

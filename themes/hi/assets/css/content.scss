@@ -1,5 +1,26 @@
+@import './_utils.scss';
+
 .hi__content {
+    @apply mx-auto space-y-8 prose;
+
     a {
         @apply text-primary-blue underline transition hover:opacity-75;
+    }
+
+    img {
+        @apply rounded shadow-md;
+    }
+
+    /* Code fences syntax highlighting */
+    .highlight {
+        @include FullWidth;
+
+        pre {
+            @apply flex rounded-none whitespace-pre-wrap break-words;
+
+            code {
+                @apply px-4 mx-auto;
+            }
+        }
     }
 }

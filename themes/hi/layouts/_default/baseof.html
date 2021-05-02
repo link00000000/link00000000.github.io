@@ -6,9 +6,7 @@
 <body class="w-full overflow-x-hidden">
     {{ partial "header.html" . }}
 
-    <main aria-role="main" class="mx-auto p-8 max-w-4xl space-y-6 sm:space-y-12 md:space-y-24 my-8">
-        {{ block "main" . }}{{ end }}
-    </main>
+    {{ block "main" . }}{{ end }}
 
     {{ partial "footer.html" . }}
 </body>
