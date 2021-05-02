@@ -1,6 +1,18 @@
 {{ define "main" }}
-<article>
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
+<article class="space-y-6">
+    {{ partial "heading.html" .Title }}
+    
+    {{ $header_image_url := "" }}
+    {{ with .Resources.GetMatch .Params.header_image }}
+        {{ $header_image_url = .RelPermalink }}
+    {{ else }}
+        {{ $header_image_url = (resources.GetMatch "images/placeholder.png").RelPermalink }}
+    {{ end }}
+    <img src="{{- $header_image_url -}}" class="w-full h-96 object-cover object-center rounded shadow-md">
+
+    
+    <main class="hi__content">
+        {{ .Content }}
+    </main>
 </article>
 {{ end }}
