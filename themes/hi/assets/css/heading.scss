@@ -1,5 +1,18 @@
-@mixin heading($color, $is_left: true, $point_length: 52px, $stroke_length: 1024px) {
-    /* Overlaps the point with the body to prevent the background from bleeding through */
+/**
+ * Creates a heading with a point at the end
+ *
+ * @NOTE Point and stroke color are dependent on text color. It is recommended
+ * that all text is wrapped in a span for a different color than the background.
+ *
+ * Example:
+ * <h1 class="bg-red-500 text-red-500 heading-left>
+ *     <span class="text-2xl text-white">Heading text</span>
+ * </h1>
+ */
+ 
+@mixin heading($color, $is_left: true, $point_length: 52px, $stroke_length:
+    1024px) {/* Overlaps the point with the body to prevent the background from
+    bleeding through */
     $point_overlap: 2px;
 
     position: relative;
@@ -46,11 +59,11 @@
 @layer utilities {
     @variants responsive {
         .heading-left {
-            @include heading(theme('colors.primary-blue'), true);
+            @include heading(theme('colors.current'), true);
         }
 
         .heading-right {
-            @include heading(theme('colors.primary-blue'), false);
+            @include heading(theme('colors.current'), false);
         }
 
         .heading-none {

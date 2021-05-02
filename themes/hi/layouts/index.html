@@ -25,7 +25,9 @@
 </section>
 
 <section>
-    <h1 class="text-2xl text-white bg-primary-blue mt-4 mb-16 py-2 px-6 inline-block heading-left w-3/4 md:w-auto">These are some things I've worked on</h1>
+    <h1 class="text-primary-blue bg-primary-blue mt-4 mb-16 py-2 px-6 inline-block heading-left w-3/4 md:w-auto">
+        <span class="text-2xl text-white">These are some things I've worked on</span>
+    </h1>
 
     <ul class="space-y-24">
         {{ range (sort (where .Site.RegularPages "Section" "projects") ".Date" "desc") }}
