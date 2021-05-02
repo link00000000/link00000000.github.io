@@ -49,7 +49,13 @@ all-powerful Force controlling everything. There's no mystical energy field that
 controls my destiny. It's all a lot of simple tricks and nonsense. Hey, Luke!
 May the Force be with you.
 
-![Remember, a Jedi can feel the Force flowing through him.](images/feel_the_force.gif "I dont know what this is")
+{{< figure
+    src="images/feel_the_force.gif"
+    link="https://getyarn.io/yarn-clip/96bc6bfb-6bca-48c3-96e0-0aa9c8286ca9"
+    title="\"Remember, a Jedi can feel the Force flowing through him.\""
+    caption="*- Ben Kenobi*"
+    alt="Remember, a Jedi can feel the Force flowing through him."
+>}}
 
 Kid, I've flown from one side of this galaxy to the other. I've seen a lot of
 strange stuff, but I've never seen anything to make me believe there's one
