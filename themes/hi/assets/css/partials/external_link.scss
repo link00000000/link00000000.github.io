@@ -7,22 +7,14 @@
  */
 
 .hi__external-link .hi__external-link_icon path {
-    // class="transition"
-    transition-property: theme('transitionProperty.DEFAULT');
-
-    // class="transition"
-    transition-timing-function: theme('transitionTimingFunction.DEFAULT');
-
-    // class="transition"
-    transition-duration: theme('transitionDuration.DEFAULT');
+    @apply transition;
 }
 
 .hi__external-link:hover .hi__external-link_icon path {
     fill: theme('colors.primary-blue') #{!important};
-    opacity: 0.75;
+    @apply opacity-75;
 }
 
 .hi__external-link .hi__external-link_icon > svg {
-    width: 100%;
-    height: 100%;
+    @apply w-full h-full;
 }

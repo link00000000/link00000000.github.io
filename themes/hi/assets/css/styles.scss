@@ -10,5 +10,7 @@
 /* Custom additional styles */
 @import './fonts.scss';
 @import './global.scss';
-@import './external_link.scss';
-@import './heading.scss';
+
+/* Styles for templates under partials/ */
+@import './partials/external_link.scss';
+@import './partials/heading.scss';
