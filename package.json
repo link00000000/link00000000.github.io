@@ -1,0 +1,22 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/link00000000/link00000000.github.io.git"
+  },
+  "author": "Logan Crandall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/link00000000/link00000000.github.io/issues"
+  },
+  "homepage": "https://accidentallycoded.com",
+  "devDependencies": {
+    "serve": "^14.1.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
