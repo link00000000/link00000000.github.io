@@ -1,0 +1,14 @@
+{
+  "serve": ".",
+  "port": 3000,
+  "bind": "localhost",
+  "watchexps": [
+    "**.js",
+    "**.css",
+    "**.html"
+  ],
+  "interval": 500,
+  "delay": 0,
+  "noReload": false,
+  "quiet": false
+}
