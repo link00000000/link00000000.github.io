@@ -18,5 +18,8 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
+  },
+  "volta": {
+    "node": "18.12.1"
   }
 }
