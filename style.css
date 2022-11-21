@@ -1,0 +1,24 @@
+:root {
+    --poloroid-size: 15rem;
+}
+
+.poloroid {
+    width: var(--poloroid-size);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    display: inline-grid;
+    padding: 1rem;
+    grid-template-rows: 4fr 1fr;
+    gap: 1rem;
+}
+
+.poloroid__image {
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
+.poloroid__text {
+    justify-self: center;
+    align-self: center;
+    object-fit: contain;
+    max-width: 100%;
+}
