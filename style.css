@@ -3,9 +3,70 @@
     src: url("fonts/NotoSans-Bold.ttf");
 }
 
+@keyframes poloroidIn1 {
+    0% {
+        transform: rotate(0deg) translateY(-0.5rem);
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotate(0deg) translateY(0rem);
+        opacity: 0;
+    }
+
+    51% {
+        transform: rotate(0deg) translateY(0rem);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(-20deg) translateY(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes poloroidIn2 {
+    0% {
+        transform: rotate(0deg) translateY(-0.5rem);
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotate(0deg) translateY(0rem);
+        opacity: 0;
+    }
+
+    51% {
+        transform: rotate(0deg) translateY(0rem);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(-10deg) translateY(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes poloroidIn3 {
+    0% {
+        transform: rotate(0deg) translateY(-0.5rem);
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotate(0deg) translateY(0rem);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(0deg) translateY(0rem);
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 1300px) {
-    main {
-        flex-direction: column;
+    .poloroids {
+        display: none;
     }
 }
 
@@ -53,10 +114,16 @@ main {
 
 .poloroid:nth-child(1) {
     transform: rotate(-20deg);
+    animation: poloroidIn1 1s ease-in-out;
 }
 
 .poloroid:nth-child(2) {
     transform: rotate(-10deg);
+    animation: poloroidIn2 1s ease-in-out;
+}
+
+.poloroid:nth-child(3) {
+    animation: poloroidIn3 1s ease-in-out;
 }
 
 .poloroid__image {
@@ -75,7 +142,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 0 7rem;
+    padding: 0 2rem;
 }
 
 .title {
