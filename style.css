@@ -3,8 +3,14 @@
     src: url("fonts/NotoSans-Bold.ttf");
 }
 
+@media screen and (max-width: 1300px) {
+    main {
+        flex-direction: column;
+    }
+}
+
 :root {
-    --poloroid-size: 15rem;
+    --poloroid-size: 12rem;
     --background-color: #fafafa;
 }
 
@@ -14,7 +20,7 @@ html, body {
 
 main {
     display: flex;
-    gap: 6rem;
+    gap: 8rem;
     font-family: "Noto Sans", "Arial Black", Gadget, sans-serif;
     font-weight: 700;
     width: 100%;
@@ -26,26 +32,31 @@ main {
 
 .poloroids {
     position: relative;
-    width: var(--poloroid-size);
 }
 
 .poloroid {
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    display: inline-grid;
-    padding: 1rem;
-    grid-template-rows: 4fr 1fr;
-    gap: 1rem;
-    background-color: white;
     position: absolute;
-    transform: translateY(-50%);
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    aspect-ratio: 3.4/4.2;
+    display: grid;
+    grid-template-rows: min-content auto;
+    padding: 1em;
+    gap: 1em;
+    width: 100%;
+}
+
+.poloroid--dummy {
+    position: relative;
+    visibility: hidden;
 }
 
 .poloroid:nth-child(1) {
-    transform: translateY(-50%) rotate(-20deg);
+    transform: rotate(-20deg);
 }
 
 .poloroid:nth-child(2) {
-    transform: translateY(-50%) rotate(-10deg);
+    transform: rotate(-10deg);
 }
 
 .poloroid__image {
@@ -64,6 +75,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding: 0 7rem;
 }
 
 .title {
