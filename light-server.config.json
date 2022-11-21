@@ -5,7 +5,9 @@
   "watchexps": [
     "**.js",
     "**.css",
-    "**.html"
+    "**.html",
+    "**.svg",
+    "**.jpg"
   ],
   "interval": 500,
   "delay": 0,
